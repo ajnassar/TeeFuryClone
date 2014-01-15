@@ -115,6 +115,7 @@ PLATFORMS
 DEPENDENCIES
   backbone-on-rails
   coffee-rails (~> 3.2.1)
+  ejs
   jquery-rails
   rails (= 3.2.15)
   sass-rails (~> 3.2.3)

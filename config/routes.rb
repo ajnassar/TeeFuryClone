@@ -3,7 +3,7 @@ TeeFuryClone::Application.routes.draw do
 
   resource :session, :only => [:create, :destroy, :new]
   resources :users, :only => [:index, :create, :new, :show]
-  resources :shirts, :only => [:create]
+  resources :shirts, :only => [:create, :index]
 
   root :to => "static_pages#home"
 end
