@@ -5,9 +5,11 @@ window.TeeFuryClone = {
   Routers: {},
   initialize: function() {
 		TeeFuryClone.shirts = new TeeFuryClone.Collections.Shirts();
-		TeeFuryClone.shirts.fetch();
-		new TeeFuryClone.Routers.Router({$rootEl: $('#content')});
-		Backbone.history.start();
+		TeeFuryClone.shirts.fetch({success: function () {
+			new TeeFuryClone.Routers.Router({$rootEl: $('#content')});
+			Backbone.history.start();
+
+		}});
   }
 };
 

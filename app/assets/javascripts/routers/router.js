@@ -13,7 +13,9 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
 			//shirt model
 		},
 		galleryIndex: function(){
-			var galleryIndexView = new TeeFuryClone.Views.GalleryIndex();
+			var galleryIndexView = new TeeFuryClone.Views.GalleryIndex({
+					collection: TeeFuryClone.shirts
+				});
 			this._swapView(galleryIndexView);
 		},
 		submitIndex: function(){
