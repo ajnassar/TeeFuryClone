@@ -34,4 +34,15 @@ TeeFuryClone::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => "TeeFuryCloneImages",
+      :access_key_id => ENV['tfc_app_id'],
+      :secret_access_key => ENV['tfc_app_secret'],
+      :s3_host_name => 's3.amazonaws.com' # or whatever your region host name is
+    }
+  }
+
 end
