@@ -6,4 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Shirt.create({:name => "hi again", :votes => 0})
+
+Shirt.create!({:name => "hi again", :votes => 0})
