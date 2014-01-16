@@ -20,7 +20,8 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
 			this._swapView(galleryIndexView);
 		},
 		submitIndex: function(){
-
+      var submitIndexView = new TeeFuryClone.Views.SubmitIndex();
+      this._swapView(submitIndexView);
 		},
 		showShirt: function(id){
 			var shirt = TeeFuryClone.shirts.get(id);
