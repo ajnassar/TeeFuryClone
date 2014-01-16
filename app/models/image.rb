@@ -1,7 +1,7 @@
 class Image < ActiveRecord::Base
   attr_accessible :artist_id, :shirt_id, :url
 
-  validates :artist_id, :shirt_id, :url, :presnece => true
+  validates :artist_id, :shirt_id, :url, :presence => true
 
   belongs_to(
     :shirt,
