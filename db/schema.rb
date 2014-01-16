@@ -11,14 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140115182824) do
+ActiveRecord::Schema.define(:version => 20140116234925) do
 
   create_table "images", :force => true do |t|
     t.integer  "artist_id"
     t.integer  "shirt_id"
-    t.string   "url"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "shirt_photo"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.string   "shirt_photo_file_name"
+    t.string   "shirt_photo_content_type"
+    t.integer  "shirt_photo_file_size"
+    t.datetime "shirt_photo_updated_at"
   end
 
   create_table "shirts", :force => true do |t|
