@@ -1,6 +1,6 @@
 TeeFuryClone.Collections.Shirts = Backbone.Collection.extend(
 	{
-		url: "/shirts",
+		url: "api/shirts",
 		model: TeeFuryClone.Models.Shirt
 	}
 );
