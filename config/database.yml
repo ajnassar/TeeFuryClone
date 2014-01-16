@@ -6,6 +6,6 @@
 development:
   adapter: postgresql
   database: tee_fury_clone_db
-	host: localhost
+  host: localhost
   pool: 5
   timeout: 5000
