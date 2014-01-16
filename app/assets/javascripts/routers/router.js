@@ -6,8 +6,9 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
 		routes:{
 			"":"TodaysTee",
 			"gallery":"galleryIndex",
+			"gallery/:id":"showShirt",
 			"submit":"submitIndex",
-			"gallery/:id/":"showShirt"
+
 		},
 		TodaysTee: function(){
 			//shirt model
@@ -22,7 +23,11 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
 
 		},
 		showShirt: function(id){
-
+			var shirt = TeeFuryClone.shirts.get(id);
+			var showShirtView = new TeeFuryClone.Views.ShirtShow({
+				model: shirt
+			});
+			this._swapView(showShirtView);
 		},
 		_swapView: function(view){
 			this._currentView && this._currentView.remove();

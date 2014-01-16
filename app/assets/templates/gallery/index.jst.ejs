@@ -1,7 +1,6 @@
 Gallery
 <ul>
 <% shirts.forEach(function(shirt){ %>
-	<li><a href="#shirt/<%= shirt.escape('id') %>
-		/<%= shirt.escape('name') %>"><%= shirt.escape('name') %></a></li>
+	<li><a href="#gallery/<%= shirt.escape('id') %>"><%= shirt.escape('name') %></a></li>
 <% }); %>
 </ul>
