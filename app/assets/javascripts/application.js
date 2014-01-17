@@ -15,6 +15,7 @@
 //= require jquery.serializeJSON.min
 //= require underscore
 //= require backbone
+//= require bootstrap
 //= require tee_fury_clone
 //= require_tree ../templates
 //= require_tree ./models
