@@ -27,4 +27,20 @@
 #nav-bar-search{
   background-color:#4D4D4D;
 }
+.gallery-thumb{
+  float: left;
+  width: 237px;
+}
+.gallery-filter-wrapper{
+  width: 185px;
+  margin-left: 5px;
+  margin-right: 20px;
+  float: left;
+  boarder-color:red;
+}
+.gallery-display-thumbs-wrapper{
+  float: right;
+  margin: 0 0 10px 8px;
+  width: 782px;
+}
 @import "bootstrap";

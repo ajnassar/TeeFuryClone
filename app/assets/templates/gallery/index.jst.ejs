@@ -9,8 +9,10 @@
   </form>
 </div>
 </nav>
-<ul>
-<% shirts.forEach(function(shirt){ %>
-	<li><a href="#gallery/<%= shirt.escape('id') %>"><%= shirt.escape('name') %></a></li>
-<% }); %>
-</ul>
+<div class="gallery-filter-wrapper">
+</div>
+<div class="gallery-display-thumbs-wrapper">
+  <% shirts.forEach(function(shirt){ %>
+  	<div class="gallery-thumb"><a href="#gallery/<%= shirt.escape('id') %>"><%= shirt.escape('name') %></a></div>
+  <% }); %>
+</div>
