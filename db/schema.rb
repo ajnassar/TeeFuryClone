@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140117192556) do
+ActiveRecord::Schema.define(:version => 20140117193036) do
 
   create_table "shirts", :force => true do |t|
     t.string   "name",                    :null => false
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20140117192556) do
     t.integer  "model_img_file_size"
     t.datetime "model_img_updated_at"
     t.integer  "artist_id",               :null => false
+    t.boolean  "submitted",               :null => false
   end
 
   add_index "shirts", ["name"], :name => "index_shirts_on_name", :unique => true
