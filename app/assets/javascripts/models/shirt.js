@@ -1,5 +1,3 @@
-TeeFuryClone.Models.Shirt = Backbone.Model.extend(
-	{
-
-	}
-);
+TeeFuryClone.Models.Shirt = Backbone.Model.extend({
+  url: "/shirts"
+});

@@ -1,15 +1,15 @@
 <h3>Submit Design</h3>
-<form>
+<form id="submit_form">
   <fieldset style="border-style: none;margin: 0;padding: 0;">
     <ul style="list-style-type:none">
       <li>
-        <label for="title">Design Title</label><br>
-        <input type="text" name="submit[title]" placeholder="title" id="title">
+        <label for="name">Design Title</label><br>
+        <input type="text" name="design[name]" placeholder="name" id="name">
       </li>
         <label for="file">Upload File</label><br>
-        <input type="file" name="submit[file]" placeholder="File path" id="file">
+        <input type="file" name="design[file]" placeholder="File path" id="file">
       <li>
-        <input type="submit" value="Submit Design">
+        <input id="submit_design" type="submit" value="Submit Design">
       </li>
     </ul>
   </fieldset>

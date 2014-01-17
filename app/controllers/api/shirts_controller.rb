@@ -4,8 +4,4 @@ class Api::ShirtsController < ApplicationController
     @shirts = Shirt.all
     render :json => @shirts
   end
-
-  def create
-
-  end
 end
