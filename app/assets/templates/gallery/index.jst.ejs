@@ -13,6 +13,8 @@
 </div>
 <div class="gallery-display-thumbs-wrapper">
   <% shirts.forEach(function(shirt){ %>
-  	<div class="gallery-thumb"><a href="#gallery/<%= shirt.escape('id') %>"><%= shirt.escape('name') %></a></div>
+  	<div class="gallery-thumb">
+      <a href="#gallery/<%= shirt.escape('id') %>"><%= shirt.escape('name') %></a>
+    </div>
   <% }); %>
 </div>

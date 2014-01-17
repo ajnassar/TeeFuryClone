@@ -11,24 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140117002629) do
-
-  create_table "images", :force => true do |t|
-    t.integer  "artist_id"
-    t.integer  "shirt_id"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
-    t.string   "shirt_photo_file_name"
-    t.string   "shirt_photo_content_type"
-    t.integer  "shirt_photo_file_size"
-    t.datetime "shirt_photo_updated_at"
-  end
+ActiveRecord::Schema.define(:version => 20140117192556) do
 
   create_table "shirts", :force => true do |t|
-    t.string   "name",       :null => false
+    t.string   "name",                    :null => false
     t.integer  "votes"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.string   "design_img_file_name"
+    t.string   "design_img_content_type"
+    t.integer  "design_img_file_size"
+    t.datetime "design_img_updated_at"
+    t.string   "model_img_file_name"
+    t.string   "model_img_content_type"
+    t.integer  "model_img_file_size"
+    t.datetime "model_img_updated_at"
+    t.integer  "artist_id",               :null => false
   end
 
   add_index "shirts", ["name"], :name => "index_shirts_on_name", :unique => true

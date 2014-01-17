@@ -1,5 +1,5 @@
 class Shirt < ActiveRecord::Base
-  attr_accessible :name, :votes
+  attr_accessible :name, :votes, :design_img, :model_img, :artist_id
 
   validates :name, :presence => true
 
@@ -10,5 +10,13 @@ class Shirt < ActiveRecord::Base
     :class_name => "Image"
   )
 
+  has_attached_file :design_img, :styles => {
+    :big => "600x600",
+    :small => "50x50#"
+  }
 
+  has_attached_file :model_img, :styles => {
+    :big => "600x600",
+    :small => "50x50#"
+  }
 end
