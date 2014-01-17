@@ -16,5 +16,15 @@
   position: relative;
   width: 1000px;
 }
-
+#main{
+  overflow: hidden;
+  padding: 0 0 69px;
+  width: 100%;
+}
+#search{
+  float:right;
+}
+#nav-bar-search{
+  background-color:#4D4D4D;
+}
 @import "bootstrap";

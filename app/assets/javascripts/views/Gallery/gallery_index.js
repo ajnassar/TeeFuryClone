@@ -5,7 +5,9 @@ TeeFuryClone.Views.GalleryIndex = Backbone.View.extend(
 			var renderedContent = this.template({
 				shirts: this.collection
 			});
-			this.$el.html(renderedContent);
+
+      this.$el.html(renderedContent);
+      $(this.$el).attr("id", "main");
 			return this;
 		}
 	}
