@@ -1,5 +1,5 @@
 class Shirt < ActiveRecord::Base
-  attr_accessible :name, :votes, :design_img, :model_img, :artist_id
+  attr_accessible :name , :votes, :artist_id, :design_img, :model_img, :submitted
 
   validates :name, :presence => true
 
