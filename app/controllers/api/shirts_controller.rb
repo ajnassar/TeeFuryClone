@@ -7,8 +7,9 @@ class Api::ShirtsController < ApplicationController
 
   def create
     params[:design][:votes] = 0
-    params[:design][:artist_id] = 1
+    params[:design][:artist_id] = current_user
     params[:design][:submitted] = false
+
     @shirt = Shirt.new(params[:design])
     if @shirt.save
       render :json => @shirt

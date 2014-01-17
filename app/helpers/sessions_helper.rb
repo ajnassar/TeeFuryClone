@@ -4,7 +4,7 @@ module SessionsHelper
   end
 
   def current_user=(user)
-    @current_user = user
+    current_user = user
     session[:session_token] = user.session_token
   end
 
