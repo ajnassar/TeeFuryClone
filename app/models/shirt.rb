@@ -3,11 +3,11 @@ class Shirt < ActiveRecord::Base
 
   validates :name, :presence => true
 
-  has_many(
-    :images,
+  belongs_to(
+    :designer,
     :primary_key => :id,
-    :foreign_key => :shirt_id,
-    :class_name => "Image"
+    :foreign_key => :artist_id,
+    :class_name => "User"
   )
 
   has_attached_file :design_img, :styles => {
