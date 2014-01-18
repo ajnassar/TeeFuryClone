@@ -71,7 +71,7 @@ TeeFuryClone::Application.configure do
       :bucket => "TeeFuryCloneImages",
       :access_key_id => ENV['tfc_app_id'],
       :secret_access_key => ENV['tfc_app_secret'],
-      :s3_host_name => 's3.amazonaws.com' # or whatever your region host name is
+      :s3_host_name => 's3.amazonaws.com'
     }
   }
 
