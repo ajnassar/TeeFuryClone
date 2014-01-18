@@ -69,8 +69,8 @@ TeeFuryClone::Application.configure do
     :storage => :s3,
     :s3_credentials => {
       :bucket => "TeeFuryCloneImages",
-      :access_key_id => ENV['tfc_app_id'],
-      :secret_access_key => ENV['tfc_app_secret'],
+      :access_key_id => ENV["AWS_APP_ID"],
+      :secret_access_key => ENV["AWS_SECRET"],
       :s3_host_name => 's3.amazonaws.com'
     }
   }
