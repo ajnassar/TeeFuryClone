@@ -11,8 +11,8 @@ class Shirt < ActiveRecord::Base
   )
 
   has_attached_file :design_img, :styles => {
-    :big => "600x600",
-    :small => "50x50#"
+    :big => "618x476",
+    :small => "237x186#"
   }
 
   has_attached_file :model_img, :styles => {

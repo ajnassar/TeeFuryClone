@@ -36,11 +36,17 @@
   margin-left: 5px;
   margin-right: 20px;
   float: left;
-  boarder-color:red;
+  border-color:red;
+  border:2px solid;
+  border-radius:25px;
+  height:500px;
 }
 .gallery-display-thumbs-wrapper{
   float: right;
   margin: 0 0 10px 8px;
   width: 782px;
+  border-color:red;
+  border:2px solid;
+  border-radius:25px;
 }
 @import "bootstrap";
