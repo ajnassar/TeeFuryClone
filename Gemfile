@@ -28,7 +28,7 @@ gem 'rails_12factor'
 gem 'figaro'
 gem 'paperclip'
 gem 'aws-sdk'
-
+gem 'jbuilder'
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', :require => 'bcrypt'
 

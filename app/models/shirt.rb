@@ -1,5 +1,5 @@
 class Shirt < ActiveRecord::Base
-  attr_accessible :name , :votes, :artist_id, :design_img_data, :model_img, :submitted
+  attr_accessible :name , :votes, :artist_id, :design_img, :model_img, :submitted
 
   validates :name, :presence => true
 
@@ -20,21 +20,21 @@ class Shirt < ActiveRecord::Base
     :small => "50x50#"
   }
 
-  def design_img_data=(data_value)
-    start_idx = data_value.index(',') + 1
-    headers = data_value[0...start_idx]
-    data_value = data_value[start_idx..-1]
-
-    content_type_start_idx = headers.index(':') + 1
-    content_type_end_idx = headers.index(';') - 1
-    content_type = headers[content_type_start_idx..content_type_end_idx]
-    file_extension = content_type.split('/')[1]
-
-    StringIO.open(Base64.strict_decode64(data_value)) do |data|
-     data.class.class_eval { attr_accessor :original_filename, :content_type }
-     data.original_filename = "temp#{DateTime.now.to_i}.#{file_extension}"
-     data.content_type = content_type
-     self.design_img = data
-    end
-  end
+  # def design_img_data=(data_value)
+  #   start_idx = data_value.index(',') + 1
+  #   headers = data_value[0...start_idx]
+  #   data_value = data_value[start_idx..-1]
+  #
+  #   content_type_start_idx = headers.index(':') + 1
+  #   content_type_end_idx = headers.index(';') - 1
+  #   content_type = headers[content_type_start_idx..content_type_end_idx]
+  #   file_extension = content_type.split('/')[1]
+  #
+  #   StringIO.open(Base64.strict_decode64(data_value)) do |data|
+  #    data.class.class_eval { attr_accessor :original_filename, :content_type }
+  #    data.original_filename = "temp#{DateTime.now.to_i}.#{file_extension}"
+  #    data.content_type = content_type
+  #    self.design_img = data
+  #   end
+  # end
 end

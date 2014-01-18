@@ -14,7 +14,7 @@
 <div class="gallery-display-thumbs-wrapper">
   <% shirts.forEach(function(shirt){ %>
   	<div class="gallery-thumb">
-      <img src="shirt.url"></img>
+      <img src="<%= shirt.get('design_url') %>"></img>
       <a href="#gallery/<%= shirt.escape('id') %>"><%= shirt.escape('name') %></a>
     </div>
   <% }); %>
