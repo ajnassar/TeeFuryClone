@@ -13,10 +13,5 @@
   <center>Filter</center>
 </div>
 <div class="gallery-display-thumbs-wrapper">
-  <% shirts.forEach(function(shirt){ %>
-  	<div class="gallery-thumb">
-      <img src="<%= shirt.get('design_url_small') %>"></img>
-      <center><a href="#gallery/<%= shirt.escape('id') %>"><%= shirt.escape('name') %></a></center>
-    </div>
-  <% }); %>
+
 </div>
