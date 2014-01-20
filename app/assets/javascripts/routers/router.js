@@ -8,13 +8,18 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
 			"gallery":"galleryIndex",
 			"gallery/:id":"showShirt",
 			"submit":"submitIndex",
-      "shirt/edit":"shirtEdit"
+      "shirt/:id/edit":"shirtEdit"
 		},
 		todaysTee: function(){
 			//shirt model
 		},
-    shirtEdit: function(){
-      var shirtEditView = new TeeFuryClone.Views.ShirtEdit();
+    shirtEdit: function(id){
+      var shirt = TeeFuryClone.shirts.get(id);
+      //render shirt doesnt exist if shirt == undefined
+      console.log(shirt)
+      var shirtEditView = new TeeFuryClone.Views.ShirtEdit({
+        model: shirt
+      });
       this._swapView(shirtEditView);
     },
 		galleryIndex: function(){

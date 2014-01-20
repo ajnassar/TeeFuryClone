@@ -1,5 +1,5 @@
 class Shirt < ActiveRecord::Base
-  attr_accessible :name , :votes, :artist_id, :design_img, :model_img, :submitted
+  attr_accessible :name , :votes, :artist_id, :design_img, :model_img, :submitted, :color
 
   validates :name, :presence => true
 
@@ -17,7 +17,7 @@ class Shirt < ActiveRecord::Base
 
   has_attached_file :model_img, :styles => {
     :big => "600x600",
-    :small => "50x50#"
+    :small => "237x186"
   }
 
   # def design_img_data=(data_value)

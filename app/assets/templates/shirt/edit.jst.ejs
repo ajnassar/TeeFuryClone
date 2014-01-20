@@ -1,1 +1,42 @@
-asdasdsad
+<div id="shirt-edit-left-div">
+  <h3>Edit Shirt</h3>
+  <form id="edit_form" enctype="multipart/form-data">
+    <fieldset style="border-style: none;margin: 0;padding: 0;">
+      <ul style="list-style-type:none">
+        <li>
+          <label for="name">Design Title</label><br>
+          <input type="text" value="<%= shirt.escape('name') %>" name="design[name]" placeholder="name" id="name">
+        </li>
+        <li>
+          <label for="color">Shirt Color</label>
+          <input value="<%=shirt.escape('color') %>" type="color" name="design[color]" id="color">
+        </li>
+        <li>
+          <label for="submitted">Submitted</label>
+          <input name="design[submitted]" checked="<%= shirt.escape('submitted') %>" id="submitted" type="checkbox">
+        </li>
+        <li>
+          <label for="design">Shirt Design Img</label><br>
+          <input value="<%= shirt.get('design_url_small') %>" type="file" name="design[design]" id="design">
+        </li>
+        <li>
+          <label for="model">Model Img</label><br>
+          <input type="file" name="design[model]" id="model">
+        </li>
+        <li>
+          <input type="submit" id="update_shirt" value="Update Shirt">
+        </li>
+      </ul>
+    </fieldset>
+  </form>
+</div>
+<div id="shirt-edit-right-div">
+  <div id="edit-design-img">
+    <h3>Design Image</h3>
+    <img style="background-color:<%=shirt.get('color') %>" src="<%= shirt.get('design_url_small') %>"></img>
+  </div>
+  <div id="edit-model-img">
+      <h3>Model Image</h3>
+      <img style="background-color: <%= shirt.get('color') %>" src="<%= shirt.get('model_url_small') %>"></img>
+  </div>
+</div>

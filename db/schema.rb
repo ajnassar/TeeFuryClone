@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140117230038) do
+ActiveRecord::Schema.define(:version => 20140120213134) do
 
   create_table "shirts", :force => true do |t|
-    t.string   "name",                    :null => false
+    t.string   "name",                                           :null => false
     t.integer  "votes"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
     t.string   "design_img_file_name"
     t.string   "design_img_content_type"
     t.integer  "design_img_file_size"
@@ -26,8 +26,9 @@ ActiveRecord::Schema.define(:version => 20140117230038) do
     t.string   "model_img_content_type"
     t.integer  "model_img_file_size"
     t.datetime "model_img_updated_at"
-    t.integer  "artist_id",               :null => false
-    t.boolean  "submitted",               :null => false
+    t.integer  "artist_id",                                      :null => false
+    t.boolean  "submitted",                                      :null => false
+    t.string   "color",                   :default => "#00BC05"
   end
 
   add_index "shirts", ["name"], :name => "index_shirts_on_name", :unique => true
