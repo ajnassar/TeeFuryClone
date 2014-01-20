@@ -4,7 +4,7 @@ TeeFuryClone::Application.routes.draw do
   resource :session, :only => [:create, :destroy, :new]
   resources :users, :only => [:create, :new, :show]
   namespace "api", :defaults => { :format => :json } do
-    resources :shirts, :only => [:show, :index, :create]
+    resources :shirts, :only => [:show, :index, :create, :update]
   end
 
   root :to => "static_pages#home"

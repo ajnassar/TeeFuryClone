@@ -12,7 +12,6 @@ TeeFuryClone.Views.GalleryIndex = Backbone.View.extend(
       this.collection.forEach(function(thumb){
         var view = new TeeFuryClone.Views.Thumb({ model: thumb });
         that.$('.gallery-display-thumbs-wrapper').append(view.render().$el);
-                debugger
       });
 			return this;
 		}

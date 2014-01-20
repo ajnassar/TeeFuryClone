@@ -19,4 +19,8 @@ class Api::ShirtsController < ApplicationController
       render :json => @shirt.errors.full_messages
     end
   end
+
+  def update
+    render :json => "I am here!"
+  end
 end

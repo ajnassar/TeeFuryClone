@@ -4,15 +4,19 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
 			this.$rootEl = options.$rootEl;
 		},
 		routes:{
-			"":"TodaysTee",
+			"":"todaysTee",
 			"gallery":"galleryIndex",
 			"gallery/:id":"showShirt",
 			"submit":"submitIndex",
-
+      "shirt/edit":"shirtEdit"
 		},
-		TodaysTee: function(){
+		todaysTee: function(){
 			//shirt model
 		},
+    shirtEdit: function(){
+      var shirtEditView = new TeeFuryClone.Views.ShirtEdit();
+      this._swapView(shirtEditView);
+    },
 		galleryIndex: function(){
 			var galleryIndexView = new TeeFuryClone.Views.GalleryIndex({
 					collection: TeeFuryClone.shirts
