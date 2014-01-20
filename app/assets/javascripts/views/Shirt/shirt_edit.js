@@ -2,13 +2,12 @@ TeeFuryClone.Views.ShirtEdit = Backbone.View.extend(
 	{
 		template: JST['shirt/edit'],
     initialize: function(){
-      this.listenTo(TeeFuryClone.shirts, "add change", this.render)
+      this.listenTo(TeeFuryClone.shirts, "sync", this.render)
     },
     events: {
       'click input[type="submit"]': 'update',
       'change input[type=file]#design': "encodeDesignFile",
       'change input[type=file]#model': "encodeModelFile"
-
     },
 		render: function(){
       var renderedContent = this.template({ shirt: this.model });
@@ -32,7 +31,6 @@ TeeFuryClone.Views.ShirtEdit = Backbone.View.extend(
       var that = this;
       var file = event.currentTarget.files[0];
       var reader = new FileReader();
-      console.log("design")
       reader.onload = function(e) {
           that.model.set({ design_img: e.target.result });
       }
@@ -44,7 +42,6 @@ TeeFuryClone.Views.ShirtEdit = Backbone.View.extend(
     },
     encodeModelFile: function (event) {
       var that = this;
-      console.log("model")
       var file = event.currentTarget.files[0];
 
       var reader = new FileReader();

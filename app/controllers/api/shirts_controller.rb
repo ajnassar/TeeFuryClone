@@ -20,7 +20,6 @@ class Api::ShirtsController < ApplicationController
   def update
     params[:design][:model_img] = params[:model_img] if params[:model_img]
     params[:design][:design_img] = params[:design_img] if params[:design_img]
-    puts params
     @shirt = Shirt.find(params[:id])
     if @shirt.update_attributes(params[:design])
       render :json => @shirt

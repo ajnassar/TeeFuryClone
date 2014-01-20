@@ -6,7 +6,7 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
 		routes:{
 			"":"todaysTee",
 			"gallery":"galleryIndex",
-			"gallery/:id":"showShirt",
+			"shirt/:id":"showShirt",
 			"submit":"submitIndex",
       "shirt/:id/edit":"shirtEdit"
 		},
@@ -15,8 +15,6 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
 		},
     shirtEdit: function(id){
       var shirt = TeeFuryClone.shirts.get(id);
-      //render shirt doesnt exist if shirt == undefined
-      console.log(shirt)
       var shirtEditView = new TeeFuryClone.Views.ShirtEdit({
         model: shirt
       });
