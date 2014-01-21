@@ -1,9 +1,5 @@
 TeeFuryClone.Views.SubmitIndex = Backbone.View.extend({
   tagName: "form",
-
-  initialize: function(){
-    this.listenTo(TeeFuryClone.shirts, "add change", this.render)
-  },
   events: {
     'click input[type="submit"]': 'submitDesign',
     'change input[type=file]': "encodeFile"
@@ -21,8 +17,10 @@ TeeFuryClone.Views.SubmitIndex = Backbone.View.extend({
     this.model.set(attrs);
     this.model.collection = TeeFuryClone.shirts;
     TeeFuryClone.shirts.create(this.model, {
-      success: function(){
-        Backbone.history.navigate('gallery/'+ that.model.get('id'), { trigger: true });
+      success: function(data){
+        console.log(data);
+                console.log("ASDASDASDASDAS");
+        Backbone.history.navigate('shirt/'+ that.model.get('id'), { trigger: true });
       }
     });
   },

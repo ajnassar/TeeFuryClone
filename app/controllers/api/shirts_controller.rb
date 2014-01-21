@@ -11,7 +11,7 @@ class Api::ShirtsController < ApplicationController
     params[:design][:design_img] = params[:design_img]
     @shirt = Shirt.new(params[:design])
     if @shirt.save
-      render :json => @shirt
+      render :show
     else
       render :json => @shirt.errors.full_messages
     end
@@ -22,7 +22,7 @@ class Api::ShirtsController < ApplicationController
     params[:design][:design_img] = params[:design_img] if params[:design_img]
     @shirt = Shirt.find(params[:id])
     if @shirt.update_attributes(params[:design])
-      render :json => @shirt
+      render :show
     else
       render :json => @shirt.errors.full_messages
     end
