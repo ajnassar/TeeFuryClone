@@ -49,10 +49,47 @@
   position: relative;
 }
 .gallery-thumb-content{
-
+  float:left;
+}
+.gallery-thumb-content-left{
+  background-image: url('../images/gallery_separator.png');
+  background-position: right center;
+  background-repeat: no-repeat;
+  float: left;
+  height: 72px;
+  width: 65px;
+  position: relative;
+}
+.price{
+  margin-left: 7px;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 72px;
 }
 
+.gallery-thumb-content-right{
+  width: 170px;
+  float: left;
+}
 
+.gallery-thumb-content-right h3{
+  padding: 0;
+  color: #7E7E7E;
+  margin-top: 9px;
+  margin-bottom: 3px;
+  font-size: 20px;
+  float: left;
+  width: 100%;
+}
+.gallery-thumb-content-author{
+  color: #7E7E7E;
+  float: left;
+  width: 100%;
+}
+.gallery-thumb-content-date{
+  float: left;
+  width: 100%;
+}
 
 .gallery-filter-wrapper{
   width: 185px;

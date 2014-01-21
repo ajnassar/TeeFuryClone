@@ -1,6 +1,7 @@
 class Api::ShirtsController < ApplicationController
   def index
-    @shirts = Shirt.all
+    @shirts = Shirt.includes(:designer).all
+
     render :index
   end
 

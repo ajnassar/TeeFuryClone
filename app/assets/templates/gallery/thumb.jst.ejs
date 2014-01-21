@@ -6,5 +6,16 @@
 </div>
 
 <div class="gallery-thumb-content">
-  <%= shirt.escape('name') %>
+  <div class="gallery-thumb-content-left">
+    <span class="price">$15</span>
+  </div>
+  <div class="gallery-thumb-content-right">
+    <h3><%= shirt.escape('name') %></h3>
+    <span class="gallery-thumb-content-author">
+      by <a href="/users/<%= shirt.escape('artist_id') %>"><%= shirt.escape('designer') %></a>
+    </span>
+    <span class="gallery-thumb-content-date">
+        <%= date %>
+    </span>
+  </div>
 </div>
