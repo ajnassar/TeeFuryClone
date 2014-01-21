@@ -1,6 +1,6 @@
 TeeFuryClone::Application.routes.draw do
   get "static_pages/home"
-
+  resources :charges
   resource :session, :only => [:create, :destroy, :new]
   resources :users, :only => [:create, :new, :show]
   namespace "api", :defaults => { :format => :json } do

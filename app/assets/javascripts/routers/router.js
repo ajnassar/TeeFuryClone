@@ -8,11 +8,21 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
 			"gallery":"galleryIndex",
 			"shirt/:id":"showShirt",
 			"submit":"submitIndex",
-      "shirt/:id/edit":"shirtEdit"
+      "shirt/:id/edit":"shirtEdit",
+      "cart":"shoppingCart",
+      "checkout":"shoppingCheckout"
 		},
 		todaysTee: function(){
 			//shirt model
 		},
+    shoppingCart: function(){
+      var cartView = new TeeFuryClone.Views.Cart();
+      this._swapView(cartView);
+    },
+    shoppingCheckout: function(){
+      var checkoutView = new TeeFuryClone.Views.Checkout();
+      this._swapView(checkoutView);
+    },
     shirtEdit: function(id){
       var shirt = TeeFuryClone.shirts.get(id);
       var shirtEditView = new TeeFuryClone.Views.ShirtEdit({
