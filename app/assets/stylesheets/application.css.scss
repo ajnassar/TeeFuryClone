@@ -27,12 +27,34 @@
 #nav-bar-search{
   background-color:#4D4D4D;
 }
-.gallery-thumb{
+
+
+.gallery-display-thumbs-wrapper{
+  float: right;
+  margin: 0 0 10px 8px;
+  width: 782px;
+  border-radius:25px;
+}
+.first{
+  margin-left: 0;
+  clear: both;
+}
+.gallery-thumb-wrapper{
   float: left;
-  width: 230px;
   margin-left: 30px;
   margin-bottom: 10px;
 }
+.gallery-thumb-img{
+  height: 186px;
+  overflow: hidden;
+  position: relative;
+}
+.gallery-thumb-content{
+
+}
+
+
+
 .gallery-filter-wrapper{
   width: 185px;
   margin-left: 5px;
@@ -42,14 +64,6 @@
   border:2px solid;
   border-radius:25px;
   height:500px;
-}
-.gallery-display-thumbs-wrapper{
-  float: right;
-  margin: 0 0 10px 8px;
-  width: 782px;
-  border-color:red;
-  border:2px solid;
-  border-radius:25px;
 }
 
 #shirt-edit-left-div{

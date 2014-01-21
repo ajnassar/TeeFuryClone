@@ -6,8 +6,12 @@ TeeFuryClone.Views.GalleryIndex = Backbone.View.extend(
       var renderedContent = this.template();
       this.$el.html(renderedContent);
       $(this.$el).attr("id", "main");
-      this.collection.forEach(function(thumb){
-        var view = new TeeFuryClone.Views.Thumb({ model: thumb });
+      this.collection.forEach(function(thumb, index){
+        if (index%3 === 1){
+          var view = new TeeFuryClone.Views.Thumb({ model: thumb, first: true });
+        }else{
+          var view = new TeeFuryClone.Views.Thumb({ model: thumb, first: false });
+        }
         that.$('.gallery-display-thumbs-wrapper').append(view.render().$el);
       });
 			return this;

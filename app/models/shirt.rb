@@ -12,7 +12,7 @@ class Shirt < ActiveRecord::Base
 
   has_attached_file :design_img, :styles => {
     :big => "618x476",
-    :small => "237x186"
+    :small => "237x186#"
   }, :default_url => "/app/images/rails.png"
 
   has_attached_file :model_img, :styles => {
