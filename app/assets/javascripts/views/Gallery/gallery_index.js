@@ -7,7 +7,7 @@ TeeFuryClone.Views.GalleryIndex = Backbone.View.extend(
       this.$el.html(renderedContent);
       $(this.$el).attr("id", "main");
       this.collection.forEach(function(thumb, index){
-        if (index%3 === 1){
+        if ((index+1)%3 === 1){
           var view = new TeeFuryClone.Views.Thumb({ model: thumb, first: true });
         }else{
           var view = new TeeFuryClone.Views.Thumb({ model: thumb, first: false });

@@ -3,9 +3,8 @@
   <img style="background-color: <%= shirt.escape('color') %>"
   src="<%= shirt.get('design_url_small') %>"></img>
   </a>
-
 </div>
 
 <div class="gallery-thumb-content">
-  <center><a><%= shirt.escape('name') %></a></center>
+  <%= shirt.escape('name') %>
 </div>

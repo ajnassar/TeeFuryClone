@@ -10,7 +10,7 @@ TeeFuryClone.Views.Thumb = Backbone.View.extend(
 			var renderedContent = this.template({
 				shirt: this.model
 			});
-      if (this.first){ this.$el.addClass("first");}
+      if (this.first){ this.$el.addClass("first")}
       this.$el.html(renderedContent);
 			return this;
 		}
