@@ -1,6 +1,25 @@
 TeeFuryClone.Views.GalleryIndex = Backbone.View.extend(
 	{
 		template: JST['gallery/index'],
+    events: {
+      "click #search-gallery":"searchGallery"
+    },
+    searchGallery: function(event){
+      event.preventDefault();
+      console.log("we clicked yo")
+      debugger
+
+      var queryTerms = {};
+
+      var queryShirts = new TeeFuryClone.Collections.Shirts();
+      var that = this;
+      queryShirts.fetchByQuery(queryTerms, {
+        success: function () {
+          that.collection = queryShirts;
+          that.render();
+        }
+      });
+    },
 		render: function(){
       var that = this;
       var renderedContent = this.template();
