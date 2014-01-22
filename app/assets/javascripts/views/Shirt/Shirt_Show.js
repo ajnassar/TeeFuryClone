@@ -4,6 +4,9 @@ TeeFuryClone.Views.ShirtShow = Backbone.View.extend(
     events:{
       "click #edit_shirt":"edit",
       "click #buy_shirt":"buy",
+      "click #prev":"prev",
+      "click #gallery":"gallery",
+      "click #next":"next",
     },
     className: "show-shirt-main",
 		template: JST['shirt/shirt_show'],
@@ -19,6 +22,26 @@ TeeFuryClone.Views.ShirtShow = Backbone.View.extend(
     },
     buy: function(){
 
+    },
+    prev: function(event){
+      var prev_shirt = this.model.collection.at(this.model.collection.indexOf(this.model) - 1)
+      if (prev_shirt === undefined){
+        prev_shirt = this.model.collection.at(this.model.collection.length - 1)
+      }
+
+      Backbone.history.navigate("#shirt/"+ prev_shirt.get('id'), {trigger: true});
+    },
+    next: function(){
+      var next_shirt = this.model.collection.at(this.model.collection.indexOf(this.model) + 1)
+
+      if (next_shirt === undefined){
+        next_shirt = this.model.collection.at(0)
+      }
+
+      Backbone.history.navigate("#shirt/"+ next_shirt.get('id'), {trigger: true});
+    },
+    gallery: function(){
+      Backbone.history.navigate("#gallery", {trigger: true});
     }
 	}
 );
