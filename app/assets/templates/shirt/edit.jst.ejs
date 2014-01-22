@@ -13,7 +13,11 @@
         </li>
         <li>
           <label for="submitted">Submitted</label>
-          <input name="design[submitted]" checked="<%= shirt.escape('submitted') %>" id="submitted" type="checkbox">
+          <% if (shirt.get('submitted')){ %>
+             <input name="design[submitted]" id="submitted" checked type="checkbox">
+             <% } else {%>
+              <input name="design[submitted]" id="submitted" type="checkbox">
+          <% } %>
         </li>
         <li>
           <label for="design">Shirt Design Img</label><br>
