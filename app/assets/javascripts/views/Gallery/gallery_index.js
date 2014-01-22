@@ -6,18 +6,14 @@ TeeFuryClone.Views.GalleryIndex = Backbone.View.extend(
     },
     searchGallery: function(event){
       event.preventDefault();
-      console.log("we clicked yo")
-      debugger
-
-      var queryTerms = {};
-
+      var queryTerms = {text: $('#gallery-index-search-text').val()};
       var queryShirts = new TeeFuryClone.Collections.Shirts();
       var that = this;
-      queryShirts.fetchByQuery(queryTerms, {
-        success: function () {
-          that.collection = queryShirts;
+      queryShirts.fetchByQuery(queryTerms, function(newCollection) {
+        debugger
+          that.collection = newCollection;
           that.render();
-        }
+
       });
     },
 		render: function(){

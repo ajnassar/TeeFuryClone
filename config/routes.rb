@@ -1,5 +1,6 @@
 TeeFuryClone::Application.routes.draw do
   get "static_pages/home"
+  get "api/shirts/custom"
   resources :charges
   resource :session, :only => [:create, :destroy, :new]
   resources :users, :only => [:create, :new, :show]

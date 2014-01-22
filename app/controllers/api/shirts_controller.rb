@@ -5,6 +5,21 @@ class Api::ShirtsController < ApplicationController
     render :index
   end
 
+  def custom
+    @shirts = Shirt.find_by_sql("
+    SELECT shirts.*
+    FROM shirts
+    WHERE name LIKE '%#{params[:text]}%'
+    ")
+
+    if @shirts
+      render :json => @shirts
+    else
+      render :json => "Soemthing when torngsmkdk", :status => 422
+    end
+
+  end
+
   def create
     params[:design][:votes] = 0
     params[:design][:artist_id] = current_user.id;
