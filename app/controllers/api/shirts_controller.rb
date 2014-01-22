@@ -9,11 +9,11 @@ class Api::ShirtsController < ApplicationController
     @shirts = Shirt.find_by_sql("
     SELECT shirts.*
     FROM shirts
-    WHERE name LIKE '%#{params[:text]}%'
+    WHERE Lower(name) LIKE '%#{params[:text].downcase}%'
     ")
 
     if @shirts
-      render :json => @shirts
+      render :index
     else
       render :json => "Soemthing when torngsmkdk", :status => 422
     end
