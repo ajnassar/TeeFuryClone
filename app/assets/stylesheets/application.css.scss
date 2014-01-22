@@ -27,8 +27,27 @@
 #nav-bar-search{
   background-color:#4D4D4D;
 }
-
-
+.show-shirt-main{
+  overflow: hidden;
+  padding: 0 0 69px;
+  width: 100%;
+}
+.show-shirt-content{
+  float: left;
+  overflow: hidden;
+  width: 640px;
+}
+.show-shirt-sidebar{
+  float: right;
+  padding: 0 0 0 15px;
+  width: 325px;
+}
+.image-backdrop{
+  background: #fff;
+  border: 1px solid #ddd;
+  margin: 0 0 15px;
+  padding: 10px;
+}
 .gallery-display-thumbs-wrapper{
   float: right;
   margin: 0 0 10px 8px;
@@ -52,7 +71,7 @@
   float:left;
 }
 .gallery-thumb-content-left{
-  background-image: url('../images/gallery_separator.png');
+  background-image: url('https://www.teefury.com/images/gallery_separator.png');
   background-position: right center;
   background-repeat: no-repeat;
   float: left;
