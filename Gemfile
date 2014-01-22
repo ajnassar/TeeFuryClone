@@ -29,7 +29,7 @@ gem 'figaro'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'jbuilder'
-gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'kaminari'
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', :require => 'bcrypt'
 

@@ -6,6 +6,7 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
 		routes:{
 			"":"todaysTee",
 			"gallery":"galleryIndex",
+			"admin/shirtsIndex":"adminShirtsIndex",
 			"shirt/:id":"showShirt",
 			"submit":"submitIndex",
       "shirt/:id/edit":"shirtEdit",
@@ -35,6 +36,12 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
 				collection: TeeFuryClone.shirts
 			});
 			this._swapView(galleryIndexView);
+		},
+		adminShirtsIndex: function(){
+			var adminShirtsView = new TeeFuryClone.Views.AdminShirts({
+				collection: TeeFuryClone.shirts
+			});
+			this._swapView(adminShirtsView);
 		},
 		submitIndex: function(){
       var shirt = new TeeFuryClone.Models.Shirt();

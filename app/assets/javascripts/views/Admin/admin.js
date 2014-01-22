@@ -1,6 +1,6 @@
-TeeFuryClone.Views.GalleryIndex = Backbone.View.extend(
+TeeFuryClone.Views.AdminShirts = Backbone.View.extend(
 	{
-		template: JST['gallery/index'],
+		template: JST['admin/shirts_index'],
     events: {
       "click #search-gallery":"searchGallery"
     },
@@ -19,7 +19,7 @@ TeeFuryClone.Views.GalleryIndex = Backbone.View.extend(
       var renderedContent = this.template();
       this.$el.html(renderedContent);
       $(this.$el).attr("id", "main");
-      this.collection.where({submitted: true}).forEach(function(thumb, index){
+      this.collection.where({submitted: false}).forEach(function(thumb, index){
         if ((index+1)%3 === 1){
           var view = new TeeFuryClone.Views.Thumb({ model: thumb, first: true });
         }else{
