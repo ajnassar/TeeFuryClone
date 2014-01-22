@@ -6,13 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-#create 10 users here
-
+# 10.times do
+#   User.create({:username => Faker::Internet.user_name, :password => "password"})
+# end
 Dir.chdir('images')
 Dir.foreach('.') { |filename|
   next unless filename.include?('.png')
-  shirt_name = /([^-]*).png$/.match(filename)[1]
-  shirt = Shirt.new({ :name => shirt_name, :artist_id => 1, :submitted => false, color: "#FFF"  })
+  shirt_name = /([^-]*).png$/.match(filename)[1].concat(rand(1000))
+  next if shirt_name == ""
+  shirt = Shirt.new({ :name => shirt_name, :artist_id => (1 + rand(10)), :submitted => false, color: "#FFF"  })
   file = File.open("/Users/appacademy/Desktop/TeeFuryClone/images/#{filename}")
   shirt.design_img = file
   shirt.save!
