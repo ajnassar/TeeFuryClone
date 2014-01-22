@@ -11,6 +11,26 @@ TeeFuryClone.Views.SubmitIndex = Backbone.View.extend({
     return this;
 	},
   submitDesign: function (event) {
+    var spinnerTarget = $('#spinnerContainer');
+    var spinner = new Spinner({
+        lines: 13,
+       length: 50,
+       width: 20,
+       radius: 80,
+       corners: 1,
+       rotate: 0,
+       direction: 1,
+       color: '#000',
+       speed: 1,
+       trail: 60,
+       shadow: true,
+       hwaccel: false,
+       className: 'spinner',
+       zIndex: 2000000000000000,
+       top: 'auto',
+       left: 'auto'
+    }).spin();
+    spinnerTarget.append(spinner.el);
     var that = this;
     event.preventDefault();
     var attrs = $(event.target.form).serializeJSON();
@@ -18,11 +38,11 @@ TeeFuryClone.Views.SubmitIndex = Backbone.View.extend({
     this.model.collection = TeeFuryClone.shirts;
     TeeFuryClone.shirts.create(this.model, {
       success: function(data){
-        console.log(data);
-                console.log("ASDASDASDASDAS");
+        spinnerTarget.modal('hide')
         Backbone.history.navigate('shirt/'+ that.model.get('id'), { trigger: true });
       }
     });
+    spinnerTarget.modal()
   },
   encodeFile: function (event) {
     var that = this;
@@ -40,5 +60,5 @@ TeeFuryClone.Views.SubmitIndex = Backbone.View.extend({
         console.log (stuff.getMessage())
     }
     reader.readAsDataURL(file);
-  }
+  },
 });

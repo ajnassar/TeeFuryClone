@@ -1,7 +1,7 @@
 TeeFuryClone.Views.ShirtShow = Backbone.View.extend(
 	{
     tagName: "div",
-    events:{
+    events: {
       "click #edit_shirt":"edit",
       "click #buy_shirt":"buy",
       "click #prev":"prev",

@@ -16,6 +16,7 @@
 //= require underscore
 //= require backbone
 //= require bootstrap
+//= require spin.min.js
 //= require tee_fury_clone
 //= require_tree ../templates
 //= require_tree ./models

@@ -15,6 +15,26 @@ TeeFuryClone.Views.ShirtEdit = Backbone.View.extend(
       return this;
 		},
     update: function(){
+      var spinnerTarget = $('#spinnerContainer');
+      var spinner = new Spinner({
+          lines: 13,
+         length: 50,
+         width: 20,
+         radius: 80,
+         corners: 1,
+         rotate: 0,
+         direction: 1,
+         color: '#000',
+         speed: 1,
+         trail: 60,
+         shadow: true,
+         hwaccel: false,
+         className: 'spinner',
+         zIndex: 2000000000000000,
+         top: 'auto',
+         left: 'auto'
+      }).spin();
+      spinnerTarget.append(spinner.el);
       var that = this;
       event.preventDefault();
       var attrs = $(event.target.form).serializeJSON();
@@ -25,7 +45,12 @@ TeeFuryClone.Views.ShirtEdit = Backbone.View.extend(
       }
       this.model.set(attrs);
       this.model.collection = TeeFuryClone.shirts;
-      this.model.save();
+      this.model.save({},{
+        success: function(){
+          spinnerTarget.modal('hide');
+        }
+      });
+      spinnerTarget.modal();
     },
     encodeDesignFile: function (event) {
       var that = this;
