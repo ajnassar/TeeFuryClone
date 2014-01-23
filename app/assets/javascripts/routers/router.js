@@ -75,7 +75,7 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
       _.delay(function () {
         view.$el.addClass("is-visible");
       }, 20);
-
+      window.scrollTo(0,0 );
 		}
 	}
 );

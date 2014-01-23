@@ -11,6 +11,89 @@
  *= require_self
  *= require_tree .
  */
+#header{
+  height: 105px;
+  margin-bottom: 8px;
+//  overflow: hidden;
+  width: 100%;
+  background-color: rgba(82, 79, 75, 0.19);
+}
+#header #header-top{
+  background: url(http://www.teefury.com/images/bg-top-header.png?1279165128) repeat-x;
+  border-bottom: 0px solid #fff;
+  color: #f7f7f7;
+  font-size: 12px;
+  font-weight: 700;
+  height: 32px;
+}
+#header #header-bottom{
+  height: 90px;
+}
+
+#header #header-top .box{
+  float: right;
+  margin-top: 6px;
+  overflow: hidden;
+}
+#header #header-bottom .logo {
+float: left;
+margin: 13px 0 0;
+}
+
+#header #header-bottom .logo a {
+display: block;
+height: 67px;
+overflow: hidden;
+text-indent: -9999px;
+width: 170px;
+}
+
+
+#header #header-bottom .logo h1 {
+  position: fixed;
+  top: 38px;
+  left: 115px;
+}
+
+#header #header-top .box .login{
+  float: left;
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+#header #header-top .box .login li {
+  padding: 0 0 0 5px;
+}
+#header #header-top .box li {
+  float: left;
+}
+
+
+#header .wrap {
+  margin: 0 auto;
+  overflow: hidden;
+  width: 1000px;
+}
+
+
+#header #header-bottom .nav {
+  clear: right;
+  float: right;
+  font-size: 14px;
+  list-style: none;
+  margin: 18px -8px 0 0;
+  padding: 0;
+}
+#header #header-bottom .nav li {
+  float: left;
+  height: 53px;
+}
+#header #header-bottom .nav .active {
+  background-position: 0 -106px!important;
+}
+
 #content{
   margin: 0 auto;
   position: relative;
@@ -49,8 +132,8 @@
   padding: 10px;
 }
 .gallery-display-thumbs-wrapper{
-  float: right;
-  margin: 0 0 10px 8px;
+  float: left;
+  margin: 0 0 10px 90px;
   width: 782px;
 }
 .gallery-thumb-wrapper.first{
