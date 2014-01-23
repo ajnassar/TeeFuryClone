@@ -11,10 +11,22 @@ TeeFuryClone.Views.ShirtShow = Backbone.View.extend(
     className: "show-shirt-main",
 		template: JST['shirt/shirt_show'],
 		render: function(){
+      var that = this;
 			var renderedContent = this.template({
 				shirt: this.model
 			});
-			this.$el.html(renderedContent);
+      this.$el.html(renderedContent);
+      this.model.get('comments').forEach(function(comment, index){
+        if ((index+1)%2 === 1){
+          var shirtCommentView = new TeeFuryClone.Views.ShirtComment({ model: comment });
+        }else{
+          var shirtCommentView = new TeeFuryClone.Views.ShirtComment({ model: comment });
+        }
+        that.$('.shirt-comments').append(shirtCommentView.render().$el);
+      });
+
+
+
 			return this;
 		},
     edit: function(){

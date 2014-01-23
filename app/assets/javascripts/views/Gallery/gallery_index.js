@@ -21,11 +21,11 @@ TeeFuryClone.Views.GalleryIndex = Backbone.View.extend(
       $(this.$el).attr("id", "main");
       this.collection.where({submitted: true}).forEach(function(thumb, index){
         if ((index+1)%3 === 1){
-          var view = new TeeFuryClone.Views.Thumb({ model: thumb, first: true });
+          var thumbView = new TeeFuryClone.Views.Thumb({ model: thumb, first: true });
         }else{
-          var view = new TeeFuryClone.Views.Thumb({ model: thumb, first: false });
+          var thumbView = new TeeFuryClone.Views.Thumb({ model: thumb, first: false });
         }
-        that.$('.gallery-display-thumbs-wrapper').append(view.render().$el);
+        that.$('.gallery-display-thumbs-wrapper').append(thumbView.render().$el);
       });
 			return this;
 		}

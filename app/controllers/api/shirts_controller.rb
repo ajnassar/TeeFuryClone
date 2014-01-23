@@ -12,9 +12,7 @@ class Api::ShirtsController < ApplicationController
     LEFT JOIN users ON users.id = shirts.artist_id
     WHERE Lower(name) LIKE '%#{params[:text].downcase}%' OR
     Lower(username) LIKE '%#{params[:text].downcase}%'
-
     ")
-
     if @shirts
       render :index
     else

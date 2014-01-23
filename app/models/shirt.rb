@@ -10,6 +10,13 @@ class Shirt < ActiveRecord::Base
     :class_name => "User"
   )
 
+  has_many(
+    :comments,
+    :primary_key => :id,
+    :foreign_key => :shirt_id,
+    :class_name => "Comment"
+  )
+
   has_attached_file :design_img, :styles => {
     :big => "618x476",
     :small => "237x186#"
