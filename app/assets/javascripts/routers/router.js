@@ -11,7 +11,7 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
 			"submit":"submitIndex",
       "shirt/:id/edit":"shirtEdit",
       "cart":"shoppingCart",
-      "checkout":"shoppingCheckout"
+      "checkout":"shoppingCheckout",
 		},
 		todaysTee: function(){
 			//shirt model
