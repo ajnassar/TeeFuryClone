@@ -146,6 +146,24 @@
   margin-top: 200px;
   margin-left: 0px;
 }
+.shirt-comments{
+  border-top: 1px solid #ccc;
+  float: left;
+  list-style: none;
+  overflow: hidden;
+  padding: 27px 0 0;
+  width: 100%;
+  border: none;
+  margin: 1px -9px 0 0;
+}
+.shirt-comments div{
+  border-bottom: 1px dotted #ccc;
+  float: left;
+  margin: 0 0 25px;
+  padding: 0 0 1px;
+  width: 100%;
+}
+
 
 #commentShowHide{
   background: #656464;

@@ -4,7 +4,7 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
 			this.$rootEl = options.$rootEl;
 		},
 		routes:{
-			"":"todaysTee",
+			"#":"todaysTee",
 			"gallery":"galleryIndex",
 			"admin/shirtsIndex":"adminShirtsIndex",
 			"shirt/:id":"showShirt",
