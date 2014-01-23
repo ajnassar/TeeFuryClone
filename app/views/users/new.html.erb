@@ -1,3 +1,28 @@
-<h1>Join teefury clone!</h1>
+<div style="float:left">
+  <h1>Join teefury clone!</h1>
+  <%= render "form", :user => @user %>
+</div>
+<div class="jumbotron" style="float:right; width:66%">
+  <h1>Guest Account</h1>
+  <p>You don't have to create a user, just login with our Guest account to test TeeFuryClone!</p>
+  <form action="<%= session_url %>" method="post">
+    <input
+       name="authenticity_token"
+       type="hidden"
+       value="<%= form_authenticity_token %>">
+     <input
+        id="user_username"
+        name="user[username]"
+        type="hidden"
+        value="guest">
+     <input
+        id="user_password"
+        name="user[password]"
+        type="hidden"
+        value="password">
 
-<%= render "form", :user => @user %>
+      <input class="btn btn-danger" type="submit" value="Login as Guest!">
+  </form>
+</div>
+
+
