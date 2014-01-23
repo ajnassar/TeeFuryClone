@@ -58,9 +58,24 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
 			this._swapView(showShirtView);
 		},
 		_swapView: function(view){
-			this._currentView && this._currentView.remove();
-			this._currentView = view;
-			this.$rootEl.html(view.render().$el);
+      // this._currentView && this._currentView.remove();
+      // this._currentView = view;
+      // this.$rootEl.html(view.render().$el);
+      //
+      var tempView = this._currentView
+
+      if (this._currentView) {
+        this._currentView.$el.remove();
+      }
+
+      this._currentView = view;
+      this.$rootEl.append(view.render().$el);
+      view.$el.addClass("page");
+
+      _.delay(function () {
+        view.$el.addClass("is-visible");
+      }, 20);
+
 		}
 	}
 );

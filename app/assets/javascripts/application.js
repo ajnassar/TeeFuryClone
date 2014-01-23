@@ -17,6 +17,7 @@
 //= require backbone
 //= require bootstrap
 //= require spin.min.js
+//= require backbone.viewkit
 //= require tee_fury_clone
 //= require_tree ../templates
 //= require_tree ./models

@@ -184,5 +184,14 @@
   text-decoration: underline;
 }
 
+.page {
+  -webkit-transition: -webkit-transform 1s ease;
+  -webkit-transform: translate3d(100%, 0, 0);
+}
+
+.page.is-visible {
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
 
 @import "bootstrap";
