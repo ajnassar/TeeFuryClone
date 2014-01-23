@@ -156,12 +156,48 @@
   border: none;
   margin: 1px -9px 0 0;
 }
-.shirt-comments div{
+.user-comment-div{
   border-bottom: 1px dotted #ccc;
   float: left;
   margin: 0 0 25px;
   padding: 0 0 1px;
   width: 100%;
+}
+.user-comment-image{
+  float: left;
+  height: 52px;
+  overflow: hidden;
+  width: 66px;
+}
+
+.user-comment-body{
+  display: table;
+  float: right;
+  min-height: 74px;
+  width: 560px;
+}
+.author{
+  color: #030303;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 3px 0 0;
+}
+.comment-about{
+  float: left;
+  margin: 0 0 4px;
+}
+
+.date{
+  color: #646464;
+  font-size: 11px;
+  font-weight: 400;
+  margin: 0 3px 0 0;
+}
+
+.comment-body{
+  clear: both;
+  padding-top: 5px;
+  width: 562px;
 }
 
 

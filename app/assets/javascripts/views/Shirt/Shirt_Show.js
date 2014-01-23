@@ -7,6 +7,7 @@ TeeFuryClone.Views.ShirtShow = Backbone.View.extend(
       "click #prev":"prev",
       "click #gallery":"gallery",
       "click #next":"next",
+      "click #commentShowHide":"commentShowHide"
     },
     className: "show-shirt-main",
 		template: JST['shirt/shirt_show'],
@@ -54,6 +55,15 @@ TeeFuryClone.Views.ShirtShow = Backbone.View.extend(
     },
     gallery: function(){
       Backbone.history.navigate("#gallery", {trigger: true});
+    },
+    commentShowHide: function(event){
+      $('.shirt-comments').slideToggle('slow')
+      $('#commentShowHide a').toggle(function(){
+        $(this).text("Hide all comments")
+      }, function(){
+        $(this).attr("background-url", "http://www.teefury.com/images/btn-show-open.gif")
+        $(this).text("Show all comments")
+      });
     }
 	}
 );

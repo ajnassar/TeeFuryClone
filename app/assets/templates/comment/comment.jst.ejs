@@ -1,1 +1,14 @@
-<p>  </p>
+<div class="user-comment-image">
+
+</div>
+<div class="user-comment-body">
+  <p class="comment-about">
+  <strong class="author">
+  <a href="http://www.teefury.com/people/163344/nellybird/">
+    <%= comment.username %>
+  </a>
+  </strong>
+  <em class="date"><%= comment.updated_at %></em>
+  </p>
+  <div class="comment-body"><%= comment.body %></div>
+</div>
