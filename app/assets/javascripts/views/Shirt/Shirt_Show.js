@@ -59,10 +59,11 @@ TeeFuryClone.Views.ShirtShow = Backbone.View.extend(
     commentShowHide: function(event){
       $('.shirt-comments').slideToggle('slow')
       $('#commentShowHide a').toggle(function(){
-        $(this).text("Hide all comments")
-      }, function(){
-        $(this).attr("background-url", "http://www.teefury.com/images/btn-show-open.gif")
         $(this).text("Show all comments")
+        $(this).attr("style", "background-image: url(http://www.teefury.com/images/btn-show.gif)")
+      }, function(){
+        $(this).text("Hide all comments")
+        $(this).attr("style", "background-image: url(http://www.teefury.com/images/btn-show-open.gif)")
       });
     }
 	}
