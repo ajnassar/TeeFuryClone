@@ -9,14 +9,21 @@
 # 10.times do
 #   User.create({:username => Faker::Internet.user_name, :password => "password"})
 # end
-Dir.chdir('images')
-Dir.foreach('.') { |filename|
-  next unless filename.include?('.png')
-  shirt_name = /([^-]*).png$/.match(filename)[1].concat(rand(1000))
-  next if shirt_name == ""
-  shirt = Shirt.new({ :name => shirt_name, :artist_id => (1 + rand(10)), :submitted => false, color: "#FFF"  })
-  file = File.open("/Users/appacademy/Desktop/TeeFuryClone/images/#{filename}")
-  shirt.design_img = file
-  shirt.save!
-  file.close()
-}
+# Dir.chdir('images')
+# Dir.foreach('.') { |filename|
+#   next unless filename.include?('.png')
+#   shirt_name = /([^-]*).png$/.match(filename)[1].concat(rand(1000))
+#   next if shirt_name == ""
+#   shirt = Shirt.new({ :name => shirt_name, :artist_id => (1 + rand(10)), :submitted => false, color: "#FFF"  })
+#   file = File.open("/Users/appacademy/Desktop/TeeFuryClone/images/#{filename}")
+#   shirt.design_img = file
+#   shirt.save!
+#   file.close()
+# }
+
+Shirt.all.each do |shirt|
+  # Faker::Lorem.sentence
+  10.times do |comment|
+    Comment.create({ :body => Faker::Lorem.sentence, :user_id => (1+rand(10)), :shirt_id => shirt.id })
+  end
+end
