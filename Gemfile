@@ -30,6 +30,7 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'jbuilder'
 gem 'kaminari'
+gem 'stripe'
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', :require => 'bcrypt'
 

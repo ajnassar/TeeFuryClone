@@ -7,9 +7,12 @@ class Api::ShirtsController < ApplicationController
 
   def custom
     @shirts = Shirt.find_by_sql("
-    SELECT shirts.*
+    SELECT shirts.*, users.username
     FROM shirts
-    WHERE Lower(name) LIKE '%#{params[:text].downcase}%'
+    LEFT JOIN users ON users.id = shirts.artist_id
+    WHERE Lower(name) LIKE '%#{params[:text].downcase}%' OR
+    Lower(username) LIKE '%#{params[:text].downcase}%'
+
     ")
 
     if @shirts
