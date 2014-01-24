@@ -8,7 +8,11 @@ window.TeeFuryClone = {
 		TeeFuryClone.shirts.fetch({ success: function () {
 			new TeeFuryClone.Routers.Router({$rootEl: $('#content')});
 			Backbone.history.start();
-      Backbone.history.navigate("#home", {trigger: true})
+
+      if (Backbone.history.fragment === ""){
+        Backbone.history.navigate("#home", {trigger: true})
+      }
+
 
 		}});
   }
