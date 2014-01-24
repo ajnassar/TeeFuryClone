@@ -21,8 +21,14 @@
         type="hidden"
         value="password">
 
-      <input class="btn btn-danger" type="submit" value="Login as Guest!">
+      <input style="height: 184px; font-size: 6em;" id="rainbow" class="btn btn-danger" type="submit" value="Login as Guest!">
   </form>
 </div>
 
-
+<script>
+$(document).ready(function() {
+  var colors =["btn-danger", "btn-warning", "btn-primary", "btn-success", "btn-info", "btn-default"];
+ setInterval(
+   function() { $('#rainbow').attr("class", "btn btn-lg btn-block " + colors[Math.floor(Math.random() * colors.length)]) }, 200);
+ });
+</script>

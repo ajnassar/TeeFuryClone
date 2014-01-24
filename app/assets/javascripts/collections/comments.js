@@ -1,4 +1,4 @@
-TeeFuryClone.Collections.Shirts = Backbone.Collection.extend(
+TeeFuryClone.Collections.Comments = Backbone.Collection.extend(
 	{
 		url: "comments",
 		model: TeeFuryClone.Models.Comment,

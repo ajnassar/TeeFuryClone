@@ -4,11 +4,11 @@
 <div class="user-comment-body">
   <p class="comment-about">
   <strong class="author">
-  <a href="users/<%= comment.user_id %>">
-    <%= comment.username %>
+  <a href="users/<%= comment.escape('user_id') %>">
+    <%= comment.escape('username') %>
   </a>
   </strong>
-  <em class="date"><%= comment.updated_at %></em>
+  <em class="date"><%= comment.escape('updated_at') %></em>
   </p>
-  <div class="comment-body"><%= comment.body %></div>
+  <div class="comment-body"><%= comment.escape('body') %></div>
 </div>

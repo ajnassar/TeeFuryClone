@@ -21,12 +21,12 @@
        type="password">
     <br>
 
-    <input type="submit" value="Log in">
+    <input class="btn btn-danger" type="submit" value="Log in">
   </form>
 </div>
 <div class="jumbotron" style="float:right; width:66%">
   <h1>Guest Account</h1>
-  <p>You don't have to create a user, just login with our Guest account to test TeeFuryClone!</p>
+  <p>You don't have to create a user, just l ogin with our Guest account to test TeeFuryClone!</p>
   <form action="<%= session_url %>" method="post">
     <input
        name="authenticity_token"
@@ -43,6 +43,16 @@
         type="hidden"
         value="password">
 
-      <input class="btn btn-danger" type="submit" value="Login as Guest!">
+      <input style="height: 184px; font-size: 6em;" id="rainbow" class="btn btn-danger" type="submit" value="Login as Guest!">
   </form>
 </div>
+
+
+<script>
+
+$(document).ready(function() {
+  var colors =["btn-danger", "btn-warning", "btn-primary", "btn-success", "btn-info", "btn-default"];
+ setInterval(
+   function() { $('#rainbow').attr("class", "btn btn-lg btn-block " + colors[Math.floor(Math.random() * colors.length)]) }, 300);
+ });
+</script>

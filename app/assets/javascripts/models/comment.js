@@ -1,2 +1,2 @@
-TeeFuryClone.Models.Shirt = Backbone.Model.extend({
+TeeFuryClone.Models.Comment = Backbone.Model.extend({
 });

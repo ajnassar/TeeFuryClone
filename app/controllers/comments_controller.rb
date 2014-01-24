@@ -1,5 +1,10 @@
 class CommentsController < ApplicationController
   def create
-    render :json => "coo"
+    @comment = Comment.new(params[:comment])
+    if @comment.save
+      render :json => "cool"
+    else
+
+    end
   end
 end

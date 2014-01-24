@@ -19,7 +19,7 @@
   background-color: rgba(82, 79, 75, 0.19);
 }
 #header #header-top{
-  background: url(http://www.teefury.com/images/bg-top-header.png?1279165128) repeat-x;
+  background: url("http://www.teefury.com/images/bg-top-header.png?1279165128") repeat-x;
   border-bottom: 0px solid #fff;
   color: #f7f7f7;
   font-size: 12px;
@@ -68,6 +68,40 @@ width: 170px;
 }
 #header #header-top .box li {
   float: left;
+}
+
+.post-comment-div {
+  border-bottom: 7px solid #ebeaea;
+  margin: 0 0 10px;
+  overflow: hidden;
+  padding: 0 0 12px;
+  width: 100%;
+}
+
+.post-comment-div button{
+  float: right;
+  margin: 1px 0 0;
+  text-decoration: none;
+  width: auto;
+}
+
+.post-comment-div p{
+  font-size: 1.153em;
+  font-weight: 700;
+  line-height: 1.666em;
+  margin: 0;
+}
+.post-comment-div span{
+  background: url("http://www.teefury.com/images/bg-num.gif");
+  color: #fdfdfd;
+  float: left;
+  font-weight: 700;
+  height: 32px;
+  line-height: 1.666em;
+  margin: 0 6px 0 2px;
+  overflow: hidden;
+  text-align: center;
+  width: 38px;
 }
 
 
