@@ -14,8 +14,8 @@
   <% } %>
   <div class="post-comment-div">
     <button id="submit-comment" class="btn btn-danger">Comment</button>
-    <p><span>90</span>Comments</p>
-    <textarea id="comment-body" style="margin-top:10px;width:100%" cols="5" rows="5" name="comments" id="comment"></textarea>
+    <p><span><%= shirt.get('comments').length %></span>Comments</p>
+    <textarea id="comment-body" style="max-width: 640px;margin-top:10px;width:100%" cols="5" rows="5" name="comments" id="comment"></textarea>
   </div>
   <div id="commentShowHide">
     <a href="JavaScript:void(0);">Hide all comments</a>

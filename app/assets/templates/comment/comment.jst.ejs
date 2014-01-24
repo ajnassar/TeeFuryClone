@@ -8,7 +8,7 @@
     <%= comment.escape('username') %>
   </a>
   </strong>
-  <em class="date"><%= comment.escape('updated_at') %></em>
+  <em class="date"><%= jQuery.timeago(comment.escape('updated_at')) %></em>
   </p>
   <div class="comment-body"><%= comment.escape('body') %></div>
 </div>

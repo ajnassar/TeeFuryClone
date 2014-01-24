@@ -4,7 +4,6 @@ json.array! @shirts do |shirt|
     json.(comment, :id, :body, :shirt_id, :user_id, :updated_at)
     json.username(comment.user.username)
   end
-  json.current_user current_user.id
   json.(shirt, :id, :name, :artist_id, :submitted, :color, :updated_at)
   json.design_url_big(shirt.design_img.url(:big))
   json.design_url_small(shirt.design_img.url(:small))

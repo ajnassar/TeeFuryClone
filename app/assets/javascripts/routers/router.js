@@ -53,6 +53,7 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
 		},
 		showShirt: function(id){
 			var shirt = TeeFuryClone.shirts.get(id);
+      var comments = new TeeFuryClone.Collections.Comments()
 			var showShirtView = new TeeFuryClone.Views.ShirtShow({
 				model: shirt
 			});

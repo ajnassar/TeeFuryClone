@@ -2,6 +2,8 @@ TeeFuryClone.Views.ShirtShow = Backbone.View.extend(
 	{
     initialize: function(){
       this.commentsShown = true;
+      this.comments = this.model.get('comments')
+      this.listenTo(this.comments, "add", this.render);
     },
     tagName: "div",
     events: {
@@ -21,25 +23,25 @@ TeeFuryClone.Views.ShirtShow = Backbone.View.extend(
 				shirt: this.model
 			});
       this.$el.html(renderedContent);
-      this.model.get('comments').forEach(function(comment, index){
+      this.comments.forEach(function(comment, index){
         if ((index+1)%2 === 1){
           var shirtCommentView = new TeeFuryClone.Views.ShirtComment({ model: comment });
         }else{
           var shirtCommentView = new TeeFuryClone.Views.ShirtComment({ model: comment });
         }
         that.$('.shirt-comments').append(shirtCommentView.render().$el);
+
       });
 			return this;
 		},
-    // submitComment: function(event){
-    //   var commentText = $('#comment-body').val()
-    //   var comment = new TeeFuryClone.Models.Comment({
-    //       user_id: this.model.current_user,
-    //       shirt_id: this.model.id,
-    //       body: commentText
-    //   });
-    //   comment.save({});
-    //     },
+    submitComment: function(event){
+      var commentText = $('#comment-body').val();
+      this.comments.create({
+          shirt_id: this.model.id,
+          body: commentText,
+      }, {wait:true});
+
+    },
     edit: function(){
       Backbone.history.navigate("#shirt/"+ this.model.get('id') +"/edit", {trigger: true});
     },

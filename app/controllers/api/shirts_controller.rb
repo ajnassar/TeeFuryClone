@@ -18,7 +18,6 @@ class Api::ShirtsController < ApplicationController
     else
       render :json => "Soemthing when torngsmkdk", :status => 422
     end
-
   end
 
   def create

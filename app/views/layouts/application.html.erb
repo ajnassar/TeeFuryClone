@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <script id="current_username" type="application/json"><%= current_user.username if current_user %></script>
 </head>
 <body>
 
@@ -13,7 +14,7 @@
       <div class="box">
         <ul class="login">
           <% if !current_user.nil? %>
-            <li><a href="users/<%= current_user.id %>">Hello <%= current_user.username %></a></li>
+            <li><a href="users/<%= current_user.id %>">Hello <%= current_user.username %></a> | </li>
 
             <li><%= link_to "Logout", session_url, :method => :delete %></li>
           <% else %>
