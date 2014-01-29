@@ -2,21 +2,21 @@
 
 Welcome to TeeFuryClone, on this site I hope to demonstrate my knowledge of web development. Consider doing the following while viewing this site.
 
--Check out our gallery of shirts!
--Submit a shirt design by browsing for an image on your computer and giving the shirt a name.
--If you don't want to upload a shirt, go to the gallery and you can edit an already existing shirt!
--Check out the admin section. This section shows pending shirts. Shirts submited by users will always be pending at first.
--The admin has the option to edit shirts, when editing a shirt the admin can change the color, change the image or change the pending status to approved.
--You can also leave a comment on a shirt! Visit any shirt and say anything you like about any of our shirts. Anyyythinngg....
+* Check out our gallery of shirts!
+* Submit a shirt design by browsing for an image on your computer and giving the shirt a name.
+* If you don't want to upload a shirt, go to the gallery and you can edit an already existing shirt!
+* Check out the admin section. This section shows pending shirts. Shirts submited by users will always be pending at first.
+* The admin has the option to edit shirts, when editing a shirt the admin can change the color, change the image or change the pending status to approved.
+* You can also leave a comment on a shirt! Visit any shirt and say anything you like about any of our shirts. Anyyythinngg....
 
 
 == Under Construction
 The following are under construction and are features that I will implement.
 
--Shopping Cart and purchasable shirts.
--User profiles(information).
--Modals in gallery.
--Guest/User/Admin restrictions.
--Tags for shirts and a tag filter in Gallery.
--Add infinite scrolling to gallery.
--Add a system to sell one shirt a day.
+* Shopping Cart and purchasable shirts.
+* User profiles(information).
+* Modals in gallery.
+* Guest/User/Admin restrictions.
+* Tags for shirts and a tag filter in Gallery.
+* Add infinite scrolling to gallery.
+* Add a system to sell one shirt a day.
