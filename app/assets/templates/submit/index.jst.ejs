@@ -1,19 +1,52 @@
-<h3>Submit Design</h3>
-<form id="submit_form" enctype="multipart/form-data">
-  <fieldset style="border-style: none;margin: 0;padding: 0;">
-    <ul style="list-style-type:none">
-      <li>
-        <label for="name">Design Title</label><br>
-        <input type="text" name="design[name]" placeholder="name" id="name">
-      </li>
-        <label for="file">Upload File</label><br>
-        <input type="file" name="design[file]" placeholder="File path" id="file">
-      <li>
-        <input id="submit_design" type="submit" value="Submit Design">
-      </li>
+   <div id="submit-content">
+  <h2>Submit Your Design</h2>
+  <strong class="slogan">Easy as one, two, three.</strong>
+  <div class="box">
+    <p>Our curators are always looking for fresh new art to feature here at TeeFury. If you'd like to submit a design for us to consider, please use the fields to the right.</p>
+  </div>
+  <div class="box smaller">
+    <h3>Why submit to TeeFury?</h3>
+    <strong>24 hours of crazy fame and stardom!</strong>
+    <p>Not to mention, we pay $1 per shirt sold and the artist retains full rights to their design.</p>
+  </div>
+  <div class="box">
+    <h3>Some of our top earning artists:</h3>
+    <ul id="top-earners">
+      <li><a href="">Name goes here</a></li>
+  </ul>
+    <p>With combined earnings of more than $548,000!</p>
+  </div>
+  <div class="box">
+    <h3>Submission guidelines:</h3>
+    <ul>
+      <li><span>1.</span><p>Designs are limited to 6 colors, front chest location with a maximum size of 12 x 16 inches. Avoid using the garment color as an element of your design (for multi-color options).</p></li>
+      <li><span>2.</span><p>Submissions should be 640 x 800 pixels (keep file size below 500kb please).</p></li>
+      <li><span>3.</span><p>Background should be your suggested shirt color. Multi-color options should be added in 'Design Notes' or on submission.</p></li>
     </ul>
-  </fieldset>
-</form>
+  </div>
+</div>
+<div id="submit-sidebar">
+<% if (user.get('id') != undefined) { %>
+    <%= console.log("Im in here!") %>
 
-<div id="spinnerContainer" class="spinner" style="display:none">
+  <form id="submit_form" enctype="multipart/form-data">
+    <fieldset style="border-style: none;margin: 0;padding: 0;">
+      <ul style="list-style-type:none">
+        <li>
+          <label for="name">Design Title</label><br>
+          <input type="text" name="design[name]" placeholder="name" id="name">
+        </li>
+          <label for="file">Upload File</label><br>
+          <input type="file" name="design[file]" placeholder="File path" id="file">
+        <li>
+          <input id="submit_design" type="submit" value="Submit Design">
+        </li>
+      </ul>
+    </fieldset>
+  </form>
+  <div id="spinnerContainer" class="spinner" style="display:none">
+  </div>
+<% } else{ %>
+  Sign Up or Log In
+<% } %>
 </div>

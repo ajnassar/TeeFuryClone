@@ -5,7 +5,21 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <script id="current_username" type="application/json"><%= current_user.username if current_user %></script>
+  <script type="application/json" id="bootstrapped-current-user-id">
+    <% if current_user %>
+       {"current_user": <%= current_user.to_json.html_safe %>} 
+      <%user_id = current_user.id %>      
+    <% else %>
+      {"current_user": <%= nil.to_json %>}
+      <%user_id = nil %>
+    <% end %>
+  </script>
+  <script>
+  $(function(){
+    var current_user = JSON.parse($("#bootstrapped-current-user-id").html())
+    TeeFuryClone.user = new TeeFuryClone.Models.User(current_user.current_user);
+  });
+  </script>
 </head>
 <body>
 

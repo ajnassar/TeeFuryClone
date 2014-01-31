@@ -6,7 +6,7 @@ TeeFuryClone.Views.SubmitIndex = Backbone.View.extend({
   },
   template: JST['submit/index'],
 	render: function(){
-    renderedContent = this.template();
+    renderedContent = this.template({user: TeeFuryClone.user});
     this.$el.html(renderedContent);
     return this;
 	},

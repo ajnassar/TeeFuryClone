@@ -127,12 +127,26 @@ width: 170px;
 #header #header-bottom .nav .active {
   background-position: 0 -106px!important;
 }
+#submit-content {
+float: left;
+padding: 29px 0 0 41px;
+width: 395px;
+}
 
+#submit-sidebar {
+  float: right;
+  overflow: hidden;
+  padding: 75px 0 0 15px;
+  width: 422px;
+} 
 #content{
   margin: 0 auto;
   position: relative;
   width: 1000px;
 }
+
+
+
 #main{
   overflow: hidden;
   padding: 0 0 69px;
