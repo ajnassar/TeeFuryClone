@@ -4,6 +4,8 @@ window.TeeFuryClone = {
   Views: {},
   Routers: {},
   initialize: function() {
+    TeeFuryClone.Dispatcher = _.extend({}, Backbone.Events);
+    TeeFuryClone.flash_messages = { notice: ""}
 		TeeFuryClone.shirts = new TeeFuryClone.Collections.Shirts();
 		TeeFuryClone.username = $('#current_username').text();
     TeeFuryClone.shirts.fetch({ success: function () {
