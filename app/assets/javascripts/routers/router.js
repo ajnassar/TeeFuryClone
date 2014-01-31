@@ -39,10 +39,15 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
 			this._swapView(galleryIndexView);
 		},
 		adminShirtsIndex: function(){
-			var adminShirtsView = new TeeFuryClone.Views.AdminShirts({
-				collection: TeeFuryClone.shirts
-			});
-			this._swapView(adminShirtsView);
+      if (TeeFuryClone.user.get('admin') == false) {
+        Backbone.history.navigate("#home", {trigger: true})
+      } else {
+  			var adminShirtsView = new TeeFuryClone.Views.AdminShirts({
+  				collection: TeeFuryClone.shirts
+  			});
+
+  			this._swapView(adminShirtsView);
+      }
 		},
 		submitIndex: function(){
       var shirt = new TeeFuryClone.Models.Shirt();

@@ -49,7 +49,11 @@
     			<li><a href="/#home">Home</a></li>
     			<li><a href="/#gallery">Gallery</a></li>
     			<li><a href="/#submit">Submit</a></li>
-    			<li><a href="/#admin/shirtsIndex">Admin</a></li>
+          <% if !current_user.nil? %>
+            <% if current_user.admin %>
+      			 <li><a href="/#admin/shirtsIndex">Admin</a></li>
+            <% end %>
+          <% end %>
     		</ul>
       </div>
   	</div>

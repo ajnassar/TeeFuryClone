@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140123004029) do
+ActiveRecord::Schema.define(:version => 20140131174608) do
 
   create_table "comments", :force => true do |t|
     t.string   "body",       :null => false
@@ -45,11 +45,12 @@ ActiveRecord::Schema.define(:version => 20140123004029) do
   add_index "shirts", ["name"], :name => "index_shirts_on_name", :unique => true
 
   create_table "users", :force => true do |t|
-    t.string   "username",        :null => false
-    t.string   "password_digest", :null => false
-    t.string   "session_token",   :null => false
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.string   "username",                           :null => false
+    t.string   "password_digest",                    :null => false
+    t.string   "session_token",                      :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.boolean  "admin",           :default => false, :null => false
   end
 
   add_index "users", ["session_token"], :name => "index_users_on_session_token", :unique => true
