@@ -15,14 +15,17 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
 		},
 		home: function(){
       var homeView = new TeeFuryClone.Views.Home();
+      TeeFuryClone.Dispatcher.trigger('show_flash_message', "");
       this._swapView(homeView);
 		},
     shoppingCart: function(){
       var cartView = new TeeFuryClone.Views.Cart();
+      TeeFuryClone.Dispatcher.trigger('show_flash_message', "");
       this._swapView(cartView);
     },
     shoppingCheckout: function(){
       var checkoutView = new TeeFuryClone.Views.Checkout();
+      TeeFuryClone.Dispatcher.trigger('show_flash_message', "");
       this._swapView(checkoutView);
     },
     shirtEdit: function(id){
@@ -30,22 +33,25 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
       var shirtEditView = new TeeFuryClone.Views.ShirtEdit({
         model: shirt
       });
+      TeeFuryClone.Dispatcher.trigger('show_flash_message', "");
       this._swapView(shirtEditView);
     },
 		galleryIndex: function(){
 			var galleryIndexView = new TeeFuryClone.Views.GalleryIndex({
 				collection: TeeFuryClone.shirts
 			});
+      TeeFuryClone.Dispatcher.trigger('show_flash_message', "");
 			this._swapView(galleryIndexView);
 		},
 		adminShirtsIndex: function(){
       if (TeeFuryClone.user.get('admin') == false) {
         Backbone.history.navigate("#home", {trigger: true})
+        TeeFuryClone.Dispatcher.trigger('show_flash_message', "You are not authorized to visit that page!");
       } else {
   			var adminShirtsView = new TeeFuryClone.Views.AdminShirts({
   				collection: TeeFuryClone.shirts
   			});
-
+        TeeFuryClone.Dispatcher.trigger('show_flash_message', "");
   			this._swapView(adminShirtsView);
       }
 		},
@@ -55,6 +61,7 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
         model: shirt,
         user: TeeFuryClone.user.get('id')
       });
+      TeeFuryClone.Dispatcher.trigger('show_flash_message', "");
       this._swapView(submitIndexView);
 		},
 		showShirt: function(id){
@@ -63,6 +70,7 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
 			var showShirtView = new TeeFuryClone.Views.ShirtShow({
 				model: shirt
 			});
+      TeeFuryClone.Dispatcher.trigger('show_flash_message', "");
 			this._swapView(showShirtView);
 		},
 		_swapView: function(view){

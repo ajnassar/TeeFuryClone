@@ -362,5 +362,17 @@ width: 395px;
   -webkit-transform: translate3d(0, 0, 0);
 }
 
+div.center
+{
+  text-align: center;
+  width: 66%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#flash_message{
+  display:none;
+}
 
 @import "bootstrap";
