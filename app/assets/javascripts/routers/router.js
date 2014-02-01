@@ -22,11 +22,13 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
     shoppingCart: function(){
       var cartView = new TeeFuryClone.Views.Cart();
       TeeFuryClone.Dispatcher.trigger('show_flash_message', "");
+      this._navbarHighlight("");
       this._swapView(cartView);
     },
     shoppingCheckout: function(){
       var checkoutView = new TeeFuryClone.Views.Checkout();
       TeeFuryClone.Dispatcher.trigger('show_flash_message', "");
+      this._navbarHighlight("");
       this._swapView(checkoutView);
     },
     shirtEdit: function(id){
@@ -35,6 +37,7 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
         model: shirt
       });
       TeeFuryClone.Dispatcher.trigger('show_flash_message', "");
+      this._navbarHighlight("");
       this._swapView(shirtEditView);
     },
 		galleryIndex: function(){
@@ -75,6 +78,7 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
 				model: shirt
 			});
       TeeFuryClone.Dispatcher.trigger('show_flash_message', "");
+      this._navbarHighlight("");
 			this._swapView(showShirtView);
 		},
 		_swapView: function(view){
@@ -99,7 +103,6 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
 		},
     _navbarHighlight: function(button){
       $("#nav-buttons li").each(function(index) { 
-        console.log($(this))
         if ($(this).attr('id') == button){
           $(this).addClass("active");
         } else {
