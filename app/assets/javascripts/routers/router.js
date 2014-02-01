@@ -16,6 +16,7 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
 		home: function(){
       var homeView = new TeeFuryClone.Views.Home();
       TeeFuryClone.Dispatcher.trigger('show_flash_message', "");
+      this._navbarHighlight("home");
       this._swapView(homeView);
 		},
     shoppingCart: function(){
@@ -41,6 +42,7 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
 				collection: TeeFuryClone.shirts
 			});
       TeeFuryClone.Dispatcher.trigger('show_flash_message', "");
+      this._navbarHighlight("gallery");
 			this._swapView(galleryIndexView);
 		},
 		adminShirtsIndex: function(){
@@ -52,6 +54,7 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
   				collection: TeeFuryClone.shirts
   			});
         TeeFuryClone.Dispatcher.trigger('show_flash_message', "");
+        this._navbarHighlight("admin");
   			this._swapView(adminShirtsView);
       }
 		},
@@ -62,6 +65,7 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
         user: TeeFuryClone.user.get('id')
       });
       TeeFuryClone.Dispatcher.trigger('show_flash_message', "");
+      this._navbarHighlight("submit");
       this._swapView(submitIndexView);
 		},
 		showShirt: function(id){
@@ -92,6 +96,16 @@ TeeFuryClone.Routers.Router = Backbone.Router.extend(
         view.$el.addClass("is-visible");
       }, 20);
       window.scrollTo(0,0 );
-		}
+		},
+    _navbarHighlight: function(button){
+      $("#nav-buttons li").each(function(index) { 
+        console.log($(this))
+        if ($(this).attr('id') == button){
+          $(this).addClass("active");
+        } else {
+          $(this).removeClass("active");
+        }
+      });
+    }
 	}
 );

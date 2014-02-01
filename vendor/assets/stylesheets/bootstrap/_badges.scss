@@ -49,6 +49,8 @@ a.list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
   color: $badge-active-color;
   background-color: $badge-active-bg;
+  border-color: #D63E3E;
+  border-style: solid;
 }
 .nav-pills > li > a > .badge {
   margin-left: 3px;

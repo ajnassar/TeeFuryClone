@@ -45,13 +45,13 @@
           <p class="navbar-text" style="margin-top: 0px;"><%= image_tag("Starcow.png", size: "50x50")%>TeeFuryClone</p>
         </div>
 
-    		<ul class="nav nav-pills">
-    			<li><a href="/#home">Home</a></li>
-    			<li><a href="/#gallery">Gallery</a></li>
-    			<li><a href="/#submit">Submit</a></li>
+    		<ul id="nav-buttons" class="nav nav-pills blue">
+    			<li id="home" class="active"><a href="/#home">Home</a></li>
+    			<li id="gallery"><a href="/#gallery">Gallery</a></li>
+    			<li id="submit"><a href="/#submit">Submit</a></li>
           <% if !current_user.nil? %>
             <% if current_user.admin %>
-      			 <li><a href="/#admin/shirtsIndex">Admin</a></li>
+      			 <li id="admin"><a href="/#admin/shirtsIndex">Admin</a></li>
             <% end %>
           <% end %>
     		</ul>
